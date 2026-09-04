@@ -435,6 +435,15 @@
   </div>
 
   <div class="grid" id="cardGrid2" style="margin-top: 30px;">
+    <a href="clonar-voz-con-ia.html" class="card" data-title="clonar voz inteligencia artificial ia">
+      <div>
+        <div class="card-icon">🎙️</div>
+        <div class="meta">IA · 6 min de lectura</div>
+        <h3>Cómo clonar tu voz con inteligencia artificial</h3>
+        <p>Guía paso a paso para narrar contenido con tu propia voz clonada, de forma responsable.</p>
+      </div>
+      <span class="read-more">Leer artículo →</span>
+    </a>
     <a href="3-trucos-para-que-tu-bateria-dure-mas.html" class="card" data-title="trucos bateria dure mas celular">
       <div>
         <div class="card-icon">🔋</div>
@@ -501,12 +510,15 @@
 </footer>
 
 <script>
+  function normalizeText(str){
+    return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
   function filterCards(){
-    var query = document.getElementById('searchInput').value.toLowerCase().trim();
+    var query = normalizeText(document.getElementById('searchInput').value.trim());
     var cards = document.querySelectorAll('#cardGrid1 .card, #cardGrid2 .card');
     var visibleCount = 0;
     cards.forEach(function(card){
-      var title = card.getAttribute('data-title') || '';
+      var title = normalizeText(card.getAttribute('data-title') || '');
       if(title.indexOf(query) !== -1){
         card.style.display = 'flex';
         visibleCount++;
