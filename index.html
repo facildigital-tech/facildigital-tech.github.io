@@ -133,52 +133,61 @@
     grid-template-columns:repeat(3, 1fr);
     gap:28px;
   }
+  
+  /* Nuevas tarjetas azules modernas y llamativas */
   .card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:22px;
-    position:relative;
-    overflow:hidden;
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #3b82f6;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
   }
-  .card::before{
-    content:"";
-    position:absolute;
-    top:0; left:0; right:0;
-    height:4px;
-    background:var(--blue);
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.45);
   }
-  .card.is-android::before{background:var(--coral);}
   .card-icon{
     width:44px; height:44px;
-    background:#EAF0FF;
+    background:rgba(59, 130, 246, 0.15);
     border-radius:10px;
     display:flex; align-items:center; justify-content:center;
     font-size:1.3rem;
     margin-bottom:16px;
   }
-  .card.is-android .card-icon{background:#FFE6DB;}
-  .card h3{font-size:1.08rem; font-weight:700; margin-bottom:8px;}
-  .card p{color:var(--muted); font-size:0.92rem; margin-bottom:14px;}
-  .card .meta{font-size:0.78rem; color:var(--coral); font-weight:600;}
-  .card.is-android .meta{color:var(--blue);}
+  .card h3{font-size:1.15rem; font-weight:700; margin-bottom:10px; color: #ffffff;}
+  .card p{color:#94a3b8; font-size:0.92rem; margin-bottom:18px; line-height: 1.5;}
+  .card .meta{font-size:0.78rem; color:#38bdf8; font-weight:700; text-transform: uppercase; margin-bottom: 8px;}
   .card .read-more{
-    font-size:0.85rem;
-    font-weight:600;
-    color:var(--blue);
+    font-size:0.88rem;
+    font-weight:700;
+    color:#38bdf8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .card.is-android .read-more{color:var(--coral);}
 
   .split{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:36px;
+    margin-bottom: 36px;
   }
   .guide-card{
     background:var(--panel);
     border:1px solid var(--line);
     border-radius:16px;
     padding:30px;
+    color: var(--ink);
   }
   .guide-card h3{font-size:1.15rem; margin-bottom:12px;}
   .steps{counter-reset:step; margin-top:14px;}
@@ -290,7 +299,6 @@
   </div>
 </div>
 
-<!-- ESPACIO PARA ANUNCIO 1: pega aquí tu código de Google AdSense (banner horizontal) -->
 <div class="ad-slot">Espacio para anuncio de Google AdSense — banner horizontal</div>
 
 <section id="tutoriales">
@@ -306,52 +314,63 @@
   </div>
 
   <div class="grid">
-    <a href="como-usar-chatgpt-gratis.html" class="card" style="display:block;">
-      <div class="card-icon">🤖</div>
-      <div class="meta">IA · 5 min de lectura</div>
-      <h3>Cómo usar ChatGPT gratis desde tu celular</h3>
-      <p>La forma más simple de instalarlo y empezar a usarlo hoy mismo, sin pagar nada.</p>
+    <a href="como-usar-chatgpt-gratis.html" class="card">
+      <div>
+        <div class="card-icon">🤖</div>
+        <div class="meta">IA · 5 min de lectura</div>
+        <h3>Cómo usar ChatGPT gratis desde tu celular</h3>
+        <p>La forma más simple de instalarlo y empezar a usarlo hoy mismo, sin pagar nada.</p>
+      </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="mejores-apps-ia-videos.html" class="card" style="display:block;">
-      <div class="card-icon">🎬</div>
-      <div class="meta">IA · 6 min de lectura</div>
-      <h3>Las mejores apps de IA para crear videos</h3>
-      <p>Comparamos tres herramientas gratuitas y te decimos cuál conviene según lo que quieras hacer.</p>
+    <a href="mejores-apps-ia-videos.html" class="card">
+      <div>
+        <div class="card-icon">🎬</div>
+        <div class="meta">IA · 6 min de lectura</div>
+        <h3>Las mejores apps de IA para crear videos</h3>
+        <p>Comparamos tres herramientas gratuitas y te decimos cuál conviene según lo que quieras hacer.</p>
+      </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="crea-imagenes-con-ia.html" class="card" style="display:block;">
-      <div class="card-icon">🖼️</div>
-      <div class="meta">IA · 4 min de lectura</div>
-      <h3>Crea imágenes con inteligencia artificial en minutos</h3>
-      <p>Paso a paso para generar tu primera imagen, sin experiencia previa.</p>
+    <a href="crea-imagenes-con-ia.html" class="card">
+      <div>
+        <div class="card-icon">🖼️</div>
+        <div class="meta">IA · 4 min de lectura</div>
+        <h3>Crea imágenes con inteligencia artificial en minutos</h3>
+        <p>Paso a paso para generar tu primera imagen, sin experiencia previa.</p>
+      </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="celular-lento-solucion.html" class="card is-android" style="display:block;">
-      <div class="card-icon">📱</div>
-      <div class="meta">Android · 3 min de lectura</div>
-      <h3>Mi celular está lento: así lo soluciono</h3>
-      <p>Cinco ajustes rápidos que puedes hacer ahora mismo sin instalar nada raro.</p>
+    <a href="celular-lento-solucion.html" class="card">
+      <div>
+        <div class="card-icon">📱</div>
+        <div class="meta">Android · 3 min de lectura</div>
+        <h3>Mi celular está lento: así lo soluciono</h3>
+        <p>Cinco ajustes rápidos que puedes hacer ahora mismo sin instalar nada raro.</p>
+      </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="liberar-espacio-android.html" class="card is-android" style="display:block;">
-      <div class="card-icon">🧹</div>
-      <div class="meta">Android · 4 min de lectura</div>
-      <h3>Cómo liberar espacio en Android sin borrar tus fotos</h3>
-      <p>Trucos para recuperar gigas de espacio en menos de diez minutos.</p>
+    <a href="liberar-espacio-android.html" class="card">
+      <div>
+        <div class="card-icon">🧹</div>
+        <div class="meta">Android · 4 min de lectura</div>
+        <h3>Cómo liberar espacio en Android sin borrar tus fotos</h3>
+        <p>Trucos para recuperar gigas de espacio en menos de diez minutos.</p>
+      </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="apps-utiles-poco-conocidas.html" class="card is-android" style="display:block;">
-      <div class="card-icon">⚙️</div>
-      <div class="meta">Android · 5 min de lectura</div>
-      <h3>Apps útiles que probablemente no conocías</h3>
-      <p>Una selección de aplicaciones gratuitas que resuelven problemas comunes del día a día.</p>
+    <a href="apps-utiles-poco-conocidas.html" class="card">
+      <div>
+        <div class="card-icon">⚙️</div>
+        <div class="meta">Android · 5 min de lectura</div>
+        <h3>Apps útiles que probablemente no conocías</h3>
+        <p>Una selección de aplicaciones gratuitas que resuelven problemas comunes del día a día.</p>
+      </div>
       <span class="read-more">Leer artículo →</span>
     </a>
   </div>
 </section>
 
-<!-- ESPACIO PARA ANUNCIO 2: pega aquí tu código de Google AdSense (rectángulo mediano) -->
 <div class="ad-slot">Espacio para anuncio de Google AdSense — rectángulo mediano</div>
 
 <section id="ia">
@@ -377,42 +396,53 @@
         <li>Desinstala apps que no has abierto en los últimos meses.</li>
       </ol>
     </div>
-</div>
-<div class="guide-card">
-  <h3>
-    <a href="ganar-dinero-con-ia.html" style="text-decoration: none; color: inherit;">
-      Cómo ganar dinero utilizando Inteligencia Artificial
-    </a>
-  </h3>
-  <ol class="steps">
-    <li>Empieza con una habilidad útil.</li>
-    <li>Elige formas prácticas de usar IA.</li>
-    <li>Sigue un plan de inicio de 5 pasos.</li>
-    <li>Evita errores como inventar datos.</li>
-  </ol>
-</div>
+  </div>
 
-     <a href="3-trucos-para-que-tu-bateria-dure-mas.html">
-      <div>🔋</div>
-      <div>Android · 4 min de lectura</div>
-      <h3>3 trucos sencillos para que la batería de tu celular dure más</h3>
-      <p>Ajustes prácticos para evitar que tu teléfono se descargue a mitad del día.</p>
-      <span>Leer artículo →</span>
+  <div class="split">
+    <div class="guide-card">
+      <h3>
+        <a href="ganar-dinero-con-ia.html" style="text-decoration: none; color: inherit;">
+          Cómo ganar dinero utilizando Inteligencia Artificial
+        </a>
+      </h3>
+      <ol class="steps">
+        <li>Empieza con una habilidad útil.</li>
+        <li>Elige formas prácticas de usar IA.</li>
+        <li>Sigue un plan de inicio de 5 pasos.</li>
+        <li>Evita errores como inventar datos.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top: 30px;">
+    <a href="3-trucos-para-que-tu-bateria-dure-mas.html" class="card">
+      <div>
+        <div class="card-icon">🔋</div>
+        <div class="meta">Android · 4 min de lectura</div>
+        <h3>3 trucos sencillos para que la batería de tu celular dure más</h3>
+        <p>Ajustes prácticos para evitar que tu teléfono se descargue a mitad del día.</p>
+      </div>
+      <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="como-saber-si-tu-celular-esta-intervenido.html">
-      <div>🛡️</div>
-      <div>Android · 5 min de lectura</div>
-      <h3>Cómo saber si tu celular está intervenido o rastreado</h3>
-      <p>Códigos y señales clave para descubrir si una app espía usa tus datos.</p>
-      <span>Leer artículo →</span>
+    <a href="como-saber-si-tu-celular-esta-intervenido.html" class="card">
+      <div>
+        <div class="card-icon">🛡️</div>
+        <div class="meta">Android · 5 min de lectura</div>
+        <h3>Cómo saber si tu celular está intervenido o rastreado</h3>
+        <p>Códigos y señales clave para descubrir si una app espía usa tus datos.</p>
+      </div>
+      <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="como-saber-si-tu-celular-tiene-virus.html">
-      <div>🦠</div>
-      <div>Android · 4 min de lectura</div>
-      <h3>Cómo saber si tu celular Android tiene virus o malware</h3>
-      <p>Pasos sencillos para identificar infecciones y limpiar tu equipo rápidamente.</p>
-      <span>Leer artículo →</span>
+    <a href="como-saber-si-tu-celular-tiene-virus.html" class="card">
+      <div>
+        <div class="card-icon">🦠</div>
+        <div class="meta">Android · 4 min de lectura</div>
+        <h3>Cómo saber si tu celular Android tiene virus o malware</h3>
+        <p>Pasos sencillos para identificar infecciones y limpiar tu equipo rápidamente.</p>
+      </div>
+      <span class="read-more">Leer artículo →</span>
     </a>
+  </div>
 </section>
  
 <footer>
@@ -423,8 +453,6 @@
     <a href="sobre-nosotros.html" style="color: inherit;">Sobre Nosotros</a>
   </nav>
 </footer>
-
-
 
 </body>
 </html>
