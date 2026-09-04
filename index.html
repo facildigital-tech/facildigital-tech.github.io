@@ -112,21 +112,32 @@
   .section-head h2{font-size:1.6rem; font-weight:700;}
   .section-head a{color:var(--blue); font-size:0.9rem; font-weight:500;}
 
-  .search-strip{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:44px;
+  .search-box{
+    position:relative;
+    margin-bottom:36px;
+    max-width:520px;
   }
-  .search-pill{
-    background:var(--panel);
+  .search-icon{
+    position:absolute;
+    left:16px; top:50%;
+    transform:translateY(-50%);
+    font-size:1rem;
+    opacity:0.6;
+  }
+  .search-box input{
+    width:100%;
+    padding:14px 16px 14px 44px;
     border:1px solid var(--line);
-    padding:10px 16px;
-    border-radius:24px;
-    font-size:0.85rem;
+    border-radius:12px;
+    font-family:'Inter', sans-serif;
+    font-size:0.95rem;
+    background:var(--panel);
     color:var(--ink);
   }
-  .search-pill::before{content:"🔍  "; }
+  .search-box input:focus{
+    outline:none;
+    border-color:var(--blue);
+  }
 
   .grid{
     display:grid;
@@ -305,16 +316,14 @@
   <div class="section-head">
     <h2>Lo que la gente busca</h2>
   </div>
-  <div class="search-strip">
-    <span class="search-pill">Cómo usar ChatGPT gratis</span>
-    <span class="search-pill">Mejor IA para crear videos</span>
-    <span class="search-pill">Cómo crear imágenes con IA</span>
-    <span class="search-pill">Mi celular está lento</span>
-    <span class="search-pill">Liberar espacio en Android</span>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Busca un tutorial: ChatGPT, batería, virus..." oninput="filterCards()">
   </div>
+  <p id="noResults" style="display:none; color:var(--muted); font-size:0.9rem; margin-bottom:20px;">No encontramos artículos con esa palabra.</p>
 
-  <div class="grid">
-    <a href="como-usar-chatgpt-gratis.html" class="card">
+  <div class="grid" id="cardGrid1">
+    <a href="como-usar-chatgpt-gratis.html" class="card" data-title="chatgpt gratis celular ia">
       <div>
         <div class="card-icon">🤖</div>
         <div class="meta">IA · 5 min de lectura</div>
@@ -323,7 +332,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="mejores-apps-ia-videos.html" class="card">
+    <a href="mejores-apps-ia-videos.html" class="card" data-title="mejores apps ia videos crear">
       <div>
         <div class="card-icon">🎬</div>
         <div class="meta">IA · 6 min de lectura</div>
@@ -332,7 +341,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="crea-imagenes-con-ia.html" class="card">
+    <a href="crea-imagenes-con-ia.html" class="card" data-title="crea imagenes inteligencia artificial">
       <div>
         <div class="card-icon">🖼️</div>
         <div class="meta">IA · 4 min de lectura</div>
@@ -341,7 +350,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="celular-lento-solucion.html" class="card">
+    <a href="celular-lento-solucion.html" class="card" data-title="celular lento solucion android">
       <div>
         <div class="card-icon">📱</div>
         <div class="meta">Android · 3 min de lectura</div>
@@ -350,7 +359,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="liberar-espacio-android.html" class="card">
+    <a href="liberar-espacio-android.html" class="card" data-title="liberar espacio android fotos">
       <div>
         <div class="card-icon">🧹</div>
         <div class="meta">Android · 4 min de lectura</div>
@@ -359,7 +368,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="apps-utiles-poco-conocidas.html" class="card">
+    <a href="apps-utiles-poco-conocidas.html" class="card" data-title="apps utiles poco conocidas android">
       <div>
         <div class="card-icon">⚙️</div>
         <div class="meta">Android · 5 min de lectura</div>
@@ -372,6 +381,17 @@
 </section>
 
 <div class="ad-slot">Espacio para anuncio de Google AdSense — rectángulo mediano</div>
+
+<section id="suscribete" style="padding-top:0; padding-bottom:0;">
+  <div style="background:linear-gradient(155deg, #16225C 0%, #3457D5 100%); border-radius:20px; padding:44px 6vw; text-align:center; color:#fff;">
+    <h2 style="font-size:1.5rem; margin-bottom:10px;">No te pierdas los nuevos tutoriales</h2>
+    <p style="color:#C7D2F5; max-width:50ch; margin:0 auto 24px; font-size:0.98rem;">Déjanos tu correo y te avisamos cada vez que publiquemos un tutorial nuevo de IA o Android.</p>
+    <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='¡Gracias, ya estás suscrito!';" style="display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
+      <input type="email" required placeholder="tu-correo@ejemplo.com" style="flex:1; min-width:200px; padding:14px 16px; border-radius:8px; border:none; font-family:'Inter', sans-serif; font-size:0.95rem;">
+      <button type="submit" style="background:#FF6B45; color:#fff; border:none; padding:14px 24px; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; font-family:'Inter', sans-serif;">Suscribirme</button>
+    </form>
+  </div>
+</section>
 
 <section id="ia">
   <div class="section-head">
@@ -414,8 +434,8 @@
     </div>
   </div>
 
-  <div class="grid" style="margin-top: 30px;">
-    <a href="3-trucos-para-que-tu-bateria-dure-mas.html" class="card">
+  <div class="grid" id="cardGrid2" style="margin-top: 30px;">
+    <a href="3-trucos-para-que-tu-bateria-dure-mas.html" class="card" data-title="trucos bateria dure mas celular">
       <div>
         <div class="card-icon">🔋</div>
         <div class="meta">Android · 4 min de lectura</div>
@@ -424,7 +444,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="como-saber-si-tu-celular-esta-intervenido.html" class="card">
+    <a href="como-saber-si-tu-celular-esta-intervenido.html" class="card" data-title="celular intervenido rastreado espia">
       <div>
         <div class="card-icon">🛡️</div>
         <div class="meta">Android · 5 min de lectura</div>
@@ -433,7 +453,7 @@
       </div>
       <span class="read-more">Leer artículo →</span>
     </a>
-    <a href="como-saber-si-tu-celular-tiene-virus.html" class="card">
+    <a href="como-saber-si-tu-celular-tiene-virus.html" class="card" data-title="celular virus malware android">
       <div>
         <div class="card-icon">🦠</div>
         <div class="meta">Android · 4 min de lectura</div>
@@ -445,14 +465,57 @@
   </div>
 </section>
  
+<section id="sobre-mi" style="display:grid; grid-template-columns:0.8fr 1.2fr; gap:40px; align-items:center;">
+  <div style="background:linear-gradient(150deg,#EAF0FF,#DCE6FF); border-radius:20px; padding:20px; display:flex; align-items:center; justify-content:center;">
+    <svg viewBox="0 0 200 200" width="100%" style="max-width:220px;">
+      <circle cx="100" cy="100" r="90" fill="#3457D5" opacity="0.08"/>
+      <circle cx="100" cy="78" r="34" fill="#3457D5"/>
+      <path d="M40 175c0-38 27-62 60-62s60 24 60 62" fill="#3457D5"/>
+      <circle cx="88" cy="74" r="5" fill="#fff"/>
+      <circle cx="112" cy="74" r="5" fill="#fff"/>
+      <path d="M88 92c4 5 20 5 24 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div>
+    <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:14px;">Sobre mí</h2>
+    <p style="color:var(--muted); font-size:1rem; margin-bottom:14px; max-width:60ch;">Soy la persona detrás de Fácil Digital. Empecé este espacio porque me di cuenta de que la mayoría de tutoriales de tecnología están escritos con demasiados tecnicismos, y eso aleja a mucha gente de aprovechar herramientas que realmente les pueden facilitar la vida.</p>
+    <p style="color:var(--muted); font-size:1rem; max-width:60ch;">Aquí no vas a encontrar lenguaje complicado ni pasos innecesarios: solo explicaciones directas sobre inteligencia artificial y Android, pensadas para cualquier persona, sin importar cuánta experiencia tenga con la tecnología.</p>
+  </div>
+</section>
+
 <footer>
-  <p>© 2026 Fácil Digital - Tecnología explicada para todos</p>
-  <nav style="margin-top: 10px;">
-    <a href="politica-de-privacidad.html" style="color: inherit; margin-right: 15px;">Política de Privacidad</a> | 
-    <a href="contacto.html" style="color: inherit; margin-right: 15px;">Contacto</a> | 
-    <a href="sobre-nosotros.html" style="color: inherit;">Sobre Nosotros</a>
-  </nav>
+  <div>
+    <p>© 2026 Fácil Digital - Tecnología explicada para todos</p>
+    <nav style="margin-top: 10px;">
+      <a href="politica-de-privacidad.html" style="color: inherit; margin-right: 15px;">Política de Privacidad</a> | 
+      <a href="contacto.html" style="color: inherit; margin-right: 15px;">Contacto</a> | 
+      <a href="sobre-nosotros.html" style="color: inherit;">Sobre Nosotros</a>
+    </nav>
+  </div>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <a href="#" title="Facebook (próximamente)" style="width:38px; height:38px; border-radius:8px; background:#1877F2; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-family:'Sora',sans-serif; font-size:1.05rem;">f</a>
+    <a href="#" title="Instagram (próximamente)" style="width:38px; height:38px; border-radius:8px; background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem;">📷</a>
+    <a href="#" title="TikTok (próximamente)" style="width:38px; height:38px; border-radius:8px; background:#000000; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.05rem;">🎵</a>
+    <a href="#" title="YouTube (próximamente)" style="width:38px; height:38px; border-radius:8px; background:#FF0000; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.05rem;">▶</a>
+  </div>
 </footer>
 
+<script>
+  function filterCards(){
+    var query = document.getElementById('searchInput').value.toLowerCase().trim();
+    var cards = document.querySelectorAll('#cardGrid1 .card, #cardGrid2 .card');
+    var visibleCount = 0;
+    cards.forEach(function(card){
+      var title = card.getAttribute('data-title') || '';
+      if(title.indexOf(query) !== -1){
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+</script>
 </body>
 </html>
