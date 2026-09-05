@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo liberar espacio en Android sin borrar tus fotos — Fácil Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071a3a;--bg2:#0a2860;--card:#0b2048;--card2:#0d2d63;--line:#245da8;--blue:#168cff;--cyan:#3bdcff;--coral:#ff6b45;--text:#f4f8ff;--muted:#b9c9e6;--shadow:0 12px 35px rgba(0,0,0,.28);}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 55%,#06142e 100%); color:var(--text); font-family:'Inter', sans-serif; line-height:1.7;}
+h1,h2,h3{font-family:'Sora', sans-serif;}
+a{color:inherit; text-decoration:none;}
+header{display:flex; justify-content:space-between; align-items:center; padding:22px 6vw; background:rgba(5,20,49,.93); border-bottom:1px solid rgba(59,220,255,.2); position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);}
+.logo{font-family:'Sora', sans-serif; font-size:1.4rem; font-weight:700; color:#fff;}
+.logo span{color:var(--cyan);}
+nav ul{display:flex; list-style:none; gap:30px; font-size:0.93rem; font-weight:600; color:#d7e6ff;}
+nav a:hover{color:var(--cyan);}
+.ad-slot{margin:36px auto; max-width:800px; padding:20px; border:1px dashed rgba(59,220,255,.3); background:rgba(11,32,72,.6); text-align:center; color:var(--muted); font-size:0.84rem; border-radius:8px;}
+main{max-width:760px; margin:0 auto; padding:48px 6vw 20px;}
+.breadcrumb{font-size:0.85rem; color:var(--muted); margin-bottom:20px;}
+.breadcrumb a{color:var(--cyan);}
+.tag-row{display:flex; gap:8px; margin-bottom:22px; flex-wrap:wrap;}
+.tag{background:linear-gradient(90deg,#1679e8,#32c8ff); color:#fff; font-size:0.78rem; font-weight:700; padding:6px 14px; border-radius:20px;}
+article h1{font-size:clamp(1.9rem, 4vw, 2.5rem); font-weight:700; line-height:1.18; margin-bottom:16px; color:#fff;}
+.article-meta{font-size:0.88rem; color:var(--muted); margin-bottom:34px; display:flex; gap:14px; flex-wrap:wrap;}
+article p{font-size:1.03rem; color:#d9e5fa; margin-bottom:20px; max-width:70ch;}
+article h2{font-size:1.4rem; font-weight:700; margin:36px 0 14px; color:#fff;}
+article h3{font-size:1.1rem; font-weight:700; margin:22px 0 8px; color:var(--cyan);}
+.steps{counter-reset:step; margin:20px 0;}
+.steps li{list-style:none; counter-increment:step; margin-bottom:18px; padding-left:40px; position:relative; font-size:1rem; color:#d9e5fa;}
+.steps li::before{content:counter(step); position:absolute; left:0; top:0; width:26px; height:26px; background:linear-gradient(135deg,#1383ff,#35d6ff); color:#fff; border-radius:8px; font-size:0.82rem; display:flex; align-items:center; justify-content:center; font-weight:700;}
+.tips{background:rgba(59,220,255,.09); border:1px solid rgba(59,220,255,.25); border-radius:16px; padding:26px; margin:30px 0;}
+.tips ul{margin-left:20px; margin-top:10px;}
+.tips li{margin-bottom:10px; font-size:0.98rem; color:#d8e5fa;}
+.related{padding:40px 6vw 60px; max-width:1300px; margin:0 auto;}
+.related h2{font-size:1.4rem; font-weight:700; margin-bottom:24px; color:#fff;}
+.grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;}
+.card{background:linear-gradient(180deg,rgba(11,32,72,.98),rgba(7,24,56,.98)); border:1px solid rgba(59,220,255,.17); border-radius:14px; padding:22px; box-shadow:var(--shadow);}
+.card-icon{width:44px; height:44px; background:linear-gradient(135deg,#1383ff,#35d6ff); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:16px;}
+.card h3{font-size:1.08rem; font-weight:700; margin-bottom:8px; color:#fff;}
+.card p{color:var(--muted); font-size:0.92rem; margin-bottom:0;}
+.card .meta{font-size:0.78rem; color:var(--coral); font-weight:700;}
+footer{border-top:1px solid rgba(255,255,255,.1); padding:36px 6vw; display:flex; justify-content:space-between; font-size:0.85rem; color:var(--muted); flex-wrap:wrap; gap:12px; background:#06142e;}
+@media (max-width:800px){.grid{grid-template-columns:1fr;} nav ul{gap:16px; font-size:0.82rem;}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><a href="index.html">Fácil <span>Digital</span></a></div>
+<nav><ul><li><a href="index.html#tutoriales">Tutoriales</a></li><li><a href="index.html#ia">IA</a></li><li><a href="index.html#android">Android</a></li></ul></nav>
+</header>
+<main>
+<div class="breadcrumb"><a href="index.html">Inicio</a> / Android</div>
+<div class="tag-row"><span class="tag">Android</span><span class="tag">Para principiantes</span></div>
+<article>
+<h1>Cómo liberar espacio en Android sin borrar tus fotos</h1>
+<div class="article-meta"><span>4 min de lectura</span><span>Actualizado en 2026</span></div>
+<p>El mensaje de "almacenamiento casi lleno" es una de las alertas más molestas del celular. La buena noticia es que puedes recuperar varios gigas de espacio sin tener que borrar tus fotos ni tus recuerdos.</p>
+<h2>Primero, revisa qué está ocupando el espacio</h2>
+<p>Ve a Ajustes → Almacenamiento. Ahí verás un desglose de cuánto espacio usan las fotos, las apps, los videos y el caché. Esto te dice por dónde empezar.</p>
+<h2>Paso a paso para liberar espacio</h2>
+<ol class="steps">
+<li><strong>Respalda tus fotos en la nube.</strong> Activa la copia de seguridad automática en Google Fotos. Una vez respaldadas, puedes activar la opción "Liberar espacio del dispositivo", que borra del celular solo las fotos que ya están seguras en la nube.</li>
+<li><strong>Borra el caché de las apps.</strong> Ve a Ajustes → Aplicaciones, entra a las apps que más usas (redes sociales, navegador) y toca "Borrar caché". No afecta tus cuentas ni datos guardados.</li>
+<li><strong>Revisa la carpeta de descargas.</strong> Ahí suelen acumularse archivos, imágenes y documentos que ya no necesitas.</li>
+<li><strong>Desinstala apps que no usas.</strong> Ve a Ajustes → Aplicaciones y ordena por "Menos usadas" para identificar cuáles llevan meses sin abrirse.</li>
+<li><strong>Vacía la papelera de WhatsApp y redes sociales.</strong> Estas apps guardan videos e imágenes recibidas que ocupan espacio sin que te des cuenta.</li>
+</ol>
+<div class="tips">
+<h3 style="margin-top:0;">Consejos extra</h3>
+<ul>
+<li><strong>Usa una tarjeta de memoria</strong> si tu celular lo permite, para mover fotos y videos sin perderlos.</li>
+<li><strong>Revisa cada pocos meses.</strong> El almacenamiento se llena de nuevo con el tiempo, así que conviene repetir este proceso periódicamente.</li>
+<li><strong>Evita apps "limpiadoras" de terceros.</strong> Android ya trae las herramientas necesarias; muchas apps externas no aportan más y pueden mostrar publicidad excesiva.</li>
+</ul>
+</div>
+<p>Siguiendo estos pasos puedes recuperar espacio real en tu celular en menos de diez minutos, sin perder ni una sola foto importante.</p>
+</article>
+</main>
+<div class="ad-slot">Espacio para anuncio de Google AdSense — dentro del artículo</div>
+<section class="related">
+<h2>Sigue leyendo</h2>
+<div class="grid">
+<a href="celular-lento-solucion.html" class="card">
+<div class="card-icon">📱</div>
+<div class="meta">Android · 3 min de lectura</div>
+<h3>Mi celular está lento: así lo soluciono</h3>
+<p>Cinco ajustes rápidos que puedes hacer ahora mismo sin instalar nada raro.</p>
+</a>
+<a href="apps-utiles-poco-conocidas.html" class="card">
+<div class="card-icon">⚙️</div>
+<div class="meta">Android · 5 min de lectura</div>
+<h3>Apps útiles que probablemente no conocías</h3>
+<p>Una selección de aplicaciones gratuitas que resuelven problemas comunes del día a día.</p>
+</a>
+<a href="como-usar-chatgpt-gratis.html" class="card">
+<div class="card-icon">🤖</div>
+<div class="meta">IA · 5 min de lectura</div>
+<h3>Cómo usar ChatGPT gratis desde tu celular</h3>
+<p>La forma más simple de instalarlo y empezar a usarlo hoy mismo, sin pagar nada.</p>
+</a>
+</div>
+</section>
+<footer><span>© 2026 Fácil Digital</span><span>Tecnología explicada para todos</span></footer>
+</body>
+</html>
