@@ -32,22 +32,48 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:22px 6vw;
-    border-bottom:1px solid var(--line);
+    padding:18px 6vw;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    gap:20px;
   }
-  .logo{font-family:'Sora', sans-serif; font-size:1.4rem; font-weight:700;}
+  .logo{font-family:'Sora', sans-serif; font-size:1.4rem; font-weight:700; white-space:nowrap;}
+  .header-icons{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .icon-btn{
+    background:rgba(255,255,255,0.08);
+    border:none;
+    color:#FFFFFF;
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.05rem;
+    cursor:pointer;
+    transition:background .2s;
+  }
+  .icon-btn:hover{background:rgba(255,255,255,0.18);}
  .menu-btn{
-  background:transparent;
-  border:none;
-  color:#FFFFFF;
-  font-size:1.6rem;
-  cursor:pointer;
-  margin-right:12px;
-  padding:5px;
+  font-size:1.3rem;
  }
      .logo span{color:var(--blue);}
-  nav ul{display:flex; list-style:none; gap:30px; font-size:0.93rem; font-weight:500;}
-  nav a:hover{color:var(--blue);}
+  nav ul{display:flex; list-style:none; gap:6px; font-size:0.93rem; font-weight:500; align-items:center; flex-wrap:wrap;}
+  nav ul li a{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:30px;
+    transition:background .2s, color .2s;
+  }
+  nav a:hover{background:rgba(255,255,255,0.08);}
+  nav ul li a.active-link{
+    background:var(--blue);
+    color:#fff;
+  }
+  nav ul li a.active-link:hover{background:var(--blue);}
 
   .hero{
     display:grid;
@@ -63,8 +89,11 @@
     color:#DCE6FF;
     font-size:0.78rem;
     font-weight:600;
-    padding:6px 12px;
+    padding:8px 14px;
     border-radius:20px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
   }
   .hero h1{
     font-size:clamp(2.1rem, 3.6vw, 3.1rem);
@@ -74,6 +103,7 @@
     max-width:16ch;
     color:#FFFFFF;
   }
+  .hero h1 .accent{color:#7CA8FF;}
   .hero p{
     max-width:48ch;
     color:#C7D2F5;
@@ -81,13 +111,28 @@
     margin-bottom:28px;
   }
   .btn{
-    display:inline-block;
-    background:#FF6B45;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg,#4C7CF0,#3457D5);
     color:#fff;
-    padding:14px 28px;
-    border-radius:8px;
+    padding:15px 28px;
+    border-radius:30px;
     font-weight:600;
     font-size:0.96rem;
+    box-shadow:0 8px 22px rgba(52,87,213,0.4);
+  }
+  .btn .play-ic{
+    width:22px; height:22px;
+    background:rgba(255,255,255,0.25);
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.7rem;
+  }
+  .hero-visual-wrap{
+    position:relative;
   }
   .hero-visual{
     aspect-ratio:3/3.4;
@@ -99,6 +144,19 @@
     padding:10px;
   }
   .hero-visual svg{width:100%; height:100%;}
+  .float-chip{
+    position:absolute;
+    width:52px; height:52px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.28);
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    backdrop-filter:blur(6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
 
   .ad-slot{
     margin:36px auto;
@@ -119,35 +177,64 @@
     align-items:baseline;
     margin-bottom:32px;
   }
-  .section-head h2{font-size:1.6rem; font-weight:700;}
+  .section-head h2{font-size:1.6rem; font-weight:700; display:flex; align-items:center; gap:12px;}
+  .section-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:36px; height:36px;
+    background:rgba(59,130,246,0.18);
+    color:#60a5fa;
+    border-radius:10px;
+    font-size:1rem;
+    flex-shrink:0;
+  }
   .section-head a{color:var(--blue); font-size:0.9rem; font-weight:500;}
 
   .search-box{
-    position:relative;
+    display:flex;
+    align-items:center;
+    gap:8px;
     margin-bottom:36px;
-    max-width:520px;
+    max-width:640px;
+    background:var(--panel);
+    border-radius:16px;
+    padding:6px 6px 6px 18px;
   }
   .search-icon{
-    position:absolute;
-    left:16px; top:50%;
-    transform:translateY(-50%);
     font-size:1rem;
     opacity:0.6;
+    flex-shrink:0;
   }
   .search-box input{
+    flex:1;
     width:100%;
-    padding:14px 16px 14px 44px;
-    border:1px solid var(--line);
-    border-radius:12px;
+    padding:12px 8px;
+    border:none;
     font-family:'Inter', sans-serif;
     font-size:0.95rem;
-    background:var(--panel);
+    background:transparent;
     color:var(--ink);
   }
   .search-box input:focus{
     outline:none;
-    border-color:var(--blue);
   }
+  .search-submit-btn{
+    background:var(--blue);
+    color:#fff;
+    border:none;
+    width:42px;
+    height:42px;
+    border-radius:11px;
+    font-size:1rem;
+    cursor:pointer;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s;
+  }
+  .search-submit-btn:hover{background:var(--primary-dark, #2946ac);}
 
   .grid{
     display:grid;
@@ -286,304 +373,29 @@
     padding: 10px 0;
   }
 
+  nav ul li a.active-link{
+    background:none !important;
+    color:var(--blue) !important;
+    font-weight:700;
+  }
+
   nav.active {
     right: 0;
   }
+
+  .float-chip{ width:40px; height:40px; font-size:1rem; }
        
-       
   }
-   /* ===== NUEVO DISEÑO FÁCIL DIGITAL ===== */
-
-/* Fondo general */
-body{
-  background:#081a33;
-  color:#ffffff;
-}
-
-/* Encabezado */
-header{
-  background:#081a33;
-  border-bottom:1px solid rgba(255,255,255,0.12);
-  padding:18px 6vw;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-/* Logo */
-.logo{
-  font-size:1.6rem;
-  font-weight:700;
-  color:#ffffff;
-}
-
-.logo span{
-  color:#5b8cff;
-}
-
-/* Botón menú */
-.menu-btn{
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.18);
-  border-radius:10px;
-  color:#ffffff;
-  width:48px;
-  height:48px;
-  font-size:1.5rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* Menú escritorio */
-nav ul{
-  gap:25px;
-}
-
-nav ul li a{
-  color:#dce7f7;
-  transition:0.3s;
-}
-
-nav ul li a:hover{
-  color:#7ea2ff;
-}
-
-/* HERO PRINCIPAL */
-.hero{
-  min-height:560px;
-  background:
-    radial-gradient(circle at 80% 30%, rgba(67,111,255,0.28), transparent 35%),
-    linear-gradient(135deg,#07172d 0%,#0b2550 50%,#102f66 100%);
-  padding:80px 8vw;
-  gap:50px;
-}
-
-.hero h1{
-  font-size:clamp(2.7rem,5vw,5rem);
-  max-width:13ch;
-  letter-spacing:-1.5px;
-}
-
-.hero p{
-  font-size:1.1rem;
-  color:#b9c9e6;
-  max-width:52ch;
-}
-
-.tag{
-  background:rgba(91,140,255,0.16);
-  border:1px solid rgba(126,162,255,0.25);
-  color:#bcd0ff;
-}
-
-.btn{
-  background:linear-gradient(135deg,#4f7dff,#3457d5);
-  border-radius:10px;
-  padding:15px 30px;
-  box-shadow:0 12px 30px rgba(52,87,213,0.3);
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-/* Imagen/ilustración del hero */
-.hero-visual{
-  background:
-    radial-gradient(circle at center,rgba(75,126,255,0.22),transparent 55%);
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 20px 60px rgba(0,0,0,0.28);
-}
-
-/* Secciones */
-section{
-  background:#ffffff;
-  color:#152238;
-  max-width:none;
-  padding:70px 8vw;
-}
-
-.section-head h2{
-  color:#10264a;
-  font-size:2rem;
-}
-
-.section-head a{
-  color:#3457d5;
-}
-
-/* Buscador */
-.search-box input{
-  background:#f5f7fb;
-  color:#172033;
-  border:1px solid #dce3ee;
-  border-radius:12px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.04);
-}
-
-.search-box input:focus{
-  border-color:#3457d5;
-  box-shadow:0 0 0 4px rgba(52,87,213,0.10);
-}
-
-/* TARJETAS */
-.grid{
-  gap:24px;
-}
-
-.card{
-  background:#ffffff;
-  border:1px solid #e3e9f2;
-  border-radius:18px;
-  color:#172033;
-  padding:26px;
-  min-height:270px;
-  box-shadow:0 8px 30px rgba(20,45,80,0.07);
-}
-
-.card:hover{
-  transform:translateY(-7px);
-  border-color:#8caaff;
-  box-shadow:0 18px 40px rgba(37,70,130,0.16);
-}
-
-.card h3{
-  color:#14284b;
-  font-size:1.18rem;
-}
-
-.card p{
-  color:#61708a;
-}
-
-.card-icon{
-  background:linear-gradient(135deg,#edf2ff,#dbe6ff);
-  color:#3457d5;
-}
-
-.card .meta{
-  color:#4f73d8;
-}
-
-.card .read-more{
-  color:#3457d5;
-  border-top:1px solid #e8edf5;
-}
-
-/* Guías */
-.guide-card{
-  background:#f7f9fd;
-  border:1px solid #e1e7f0;
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(20,45,80,0.05);
-}
-
-.guide-card h3{
-  color:#14284b;
-}
-
-.steps li{
-  color:#53627a;
-}
-
-.steps li::before{
-  background:linear-gradient(135deg,#4f7dff,#3457d5);
-}
-
-/* Sección suscripción */
-#suscribete{
-  background:#ffffff;
-}
-
-#suscribete > div{
-  box-shadow:0 20px 50px rgba(20,45,90,0.18);
-}
-
-/* Sobre mí */
-#sobre-mi{
-  background:#f7f9fc;
-}
-
-#sobre-mi h2{
-  color:#14284b;
-}
-
-#sobre-mi p{
-  color:#5c6b80 !important;
-}
-
-/* Footer */
-footer{
-  background:#07172d;
-  border-top:none;
-  color:#aebcd1;
-  padding:45px 8vw;
-}
-
-footer a{
-  color:#aebcd1 !important;
-}
-
-footer a:hover{
-  color:#ffffff !important;
-}
-
-/* ANUNCIOS */
-.ad-slot{
-  background:#f5f7fb;
-  border-color:#d8e0ec;
-  color:#7c8798;
-}
-
-/* MÓVIL */
-@media (max-width:800px){
-
-  header{
-    padding:14px 5vw;
-  }
-
-  .logo{
-    font-size:1.35rem;
-  }
-
-  .hero{
-    padding:55px 6vw 60px;
-    min-height:auto;
-  }
-
-  .hero h1{
-    font-size:2.5rem;
-    max-width:15ch;
-  }
-
-  section{
-    padding:55px 6vw;
-  }
-
-  .card{
-    min-height:230px;
-  }
-
-  #menu{
-    background:#ffffff;
-  }
-
-  nav ul li a{
-    color:#162238 !important;
-  }
-     }  
 </style>
 </head>
 <body>
 
 <header>
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
   <div class="logo">Fácil <span>Digital</span></div>
   <nav id="menu">
        <button onclick="toggleMenu()" style="background:none; border:none; font-size:1.8rem; color:#333; position:absolute; top:15px; right:20px; cursor:pointer;">✕</button>
   <ul>
-    <li><a href="index.html">🏠 Inicio</a></li>
+    <li><a href="index.html" class="active-link">🏠 Inicio</a></li>
     <li><a href="como-usar-chatgpt-gratis.html">📚 Tutoriales</a></li>
     <li><a href="deepseek-gratis-ecuador-celular-descarga-1.html">🤖 Inteligencia Artificial</a></li>
     <li><a href="liberar-espacio-android.html">📱 Android</a></li>
@@ -593,22 +405,26 @@ footer a:hover{
 ">✉️ Contacto</a></li>
   </ul>
   </nav>
-     
+  <div class="header-icons">
+    <button class="icon-btn search-header-btn" aria-label="Buscar" onclick="document.getElementById('tutoriales').scrollIntoView({behavior:'smooth'}); setTimeout(function(){document.getElementById('searchInput').focus();},400);">🔍</button>
+    <button class="icon-btn menu-btn" onclick="toggleMenu()">☰</button>
+  </div>
 </header>
      
 
 <div class="hero">
   <div>
     <div class="tag-row">
-      <span class="tag">Inteligencia Artificial</span>
-      <span class="tag">Android</span>
-      <span class="tag">Para principiantes</span>
+      <span class="tag">⚡ Inteligencia Artificial</span>
+      <span class="tag">🤖 Android</span>
+      <span class="tag">👤 Para principiantes</span>
     </div>
-    <h1>La tecnología explicada sin tecnicismos</h1>
+    <h1>La tecnología explicada <span class="accent">sin tecnicismos</span></h1>
     <p>Tutoriales cortos y claros para usar inteligencia artificial gratis, sacarle el jugo a tu celular Android y resolver esos problemas que te hacen perder el tiempo.</p>
-    <a href="#tutoriales" class="btn">Ver tutoriales</a>
+    <a href="#tutoriales" class="btn"><span class="play-ic">▶</span> Ver tutoriales →</a>
   </div>
-  <div class="hero-visual">
+  <div class="hero-visual-wrap">
+    <div class="hero-visual">
     <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
       <g stroke="#5C7BE0" stroke-width="1.5" fill="none" opacity="0.55">
         <path d="M60 90 L60 40 L110 40"/>
@@ -646,16 +462,22 @@ footer a:hover{
       <rect x="70" y="255" width="14" height="60" rx="7" fill="#EAF0FF"/>
       <rect x="316" y="255" width="14" height="60" rx="7" fill="#EAF0FF"/>
     </svg>
+    </div>
+    <div class="float-chip" style="top:2%; left:-6%;">🧠</div>
+    <div class="float-chip" style="top:8%; right:-8%;">☁️</div>
+    <div class="float-chip" style="bottom:22%; left:-10%;">🤖</div>
+    <div class="float-chip" style="bottom:6%; right:-6%;">📷</div>
   </div>
 </div>
 
 <section id="tutoriales">
   <div class="section-head">
-    <h2>Lo que la gente busca</h2>
+    <h2><span class="section-icon">🔍</span> Lo que la gente busca</h2>
   </div>
   <div class="search-box">
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="Busca un tutorial: ChatGPT, batería, virus..." oninput="filterCards()">
+    <button type="button" class="search-submit-btn" aria-label="Buscar" onclick="document.getElementById('searchInput').focus();">🔍</button>
   </div>
   <p id="noResults" style="display:none; color:var(--muted); font-size:0.9rem; margin-bottom:20px;">No encontramos artículos con esa palabra.</p>
 
@@ -749,7 +571,7 @@ footer a:hover{
 
 <section id="ia">
   <div class="section-head">
-    <h2>Guía rápida destacada</h2>
+    <h2><span class="section-icon">✨</span> Guía rápida destacada</h2>
   </div>
   <div class="split">
     <div class="guide-card">
