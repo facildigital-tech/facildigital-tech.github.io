@@ -292,6 +292,287 @@
        
        
   }
+   /* ===== NUEVO DISEÑO FÁCIL DIGITAL ===== */
+
+/* Fondo general */
+body{
+  background:#081a33;
+  color:#ffffff;
+}
+
+/* Encabezado */
+header{
+  background:#081a33;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  padding:18px 6vw;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+/* Logo */
+.logo{
+  font-size:1.6rem;
+  font-weight:700;
+  color:#ffffff;
+}
+
+.logo span{
+  color:#5b8cff;
+}
+
+/* Botón menú */
+.menu-btn{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:10px;
+  color:#ffffff;
+  width:48px;
+  height:48px;
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Menú escritorio */
+nav ul{
+  gap:25px;
+}
+
+nav ul li a{
+  color:#dce7f7;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#7ea2ff;
+}
+
+/* HERO PRINCIPAL */
+.hero{
+  min-height:560px;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(67,111,255,0.28), transparent 35%),
+    linear-gradient(135deg,#07172d 0%,#0b2550 50%,#102f66 100%);
+  padding:80px 8vw;
+  gap:50px;
+}
+
+.hero h1{
+  font-size:clamp(2.7rem,5vw,5rem);
+  max-width:13ch;
+  letter-spacing:-1.5px;
+}
+
+.hero p{
+  font-size:1.1rem;
+  color:#b9c9e6;
+  max-width:52ch;
+}
+
+.tag{
+  background:rgba(91,140,255,0.16);
+  border:1px solid rgba(126,162,255,0.25);
+  color:#bcd0ff;
+}
+
+.btn{
+  background:linear-gradient(135deg,#4f7dff,#3457d5);
+  border-radius:10px;
+  padding:15px 30px;
+  box-shadow:0 12px 30px rgba(52,87,213,0.3);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* Imagen/ilustración del hero */
+.hero-visual{
+  background:
+    radial-gradient(circle at center,rgba(75,126,255,0.22),transparent 55%);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 20px 60px rgba(0,0,0,0.28);
+}
+
+/* Secciones */
+section{
+  background:#ffffff;
+  color:#152238;
+  max-width:none;
+  padding:70px 8vw;
+}
+
+.section-head h2{
+  color:#10264a;
+  font-size:2rem;
+}
+
+.section-head a{
+  color:#3457d5;
+}
+
+/* Buscador */
+.search-box input{
+  background:#f5f7fb;
+  color:#172033;
+  border:1px solid #dce3ee;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.04);
+}
+
+.search-box input:focus{
+  border-color:#3457d5;
+  box-shadow:0 0 0 4px rgba(52,87,213,0.10);
+}
+
+/* TARJETAS */
+.grid{
+  gap:24px;
+}
+
+.card{
+  background:#ffffff;
+  border:1px solid #e3e9f2;
+  border-radius:18px;
+  color:#172033;
+  padding:26px;
+  min-height:270px;
+  box-shadow:0 8px 30px rgba(20,45,80,0.07);
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#8caaff;
+  box-shadow:0 18px 40px rgba(37,70,130,0.16);
+}
+
+.card h3{
+  color:#14284b;
+  font-size:1.18rem;
+}
+
+.card p{
+  color:#61708a;
+}
+
+.card-icon{
+  background:linear-gradient(135deg,#edf2ff,#dbe6ff);
+  color:#3457d5;
+}
+
+.card .meta{
+  color:#4f73d8;
+}
+
+.card .read-more{
+  color:#3457d5;
+  border-top:1px solid #e8edf5;
+}
+
+/* Guías */
+.guide-card{
+  background:#f7f9fd;
+  border:1px solid #e1e7f0;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(20,45,80,0.05);
+}
+
+.guide-card h3{
+  color:#14284b;
+}
+
+.steps li{
+  color:#53627a;
+}
+
+.steps li::before{
+  background:linear-gradient(135deg,#4f7dff,#3457d5);
+}
+
+/* Sección suscripción */
+#suscribete{
+  background:#ffffff;
+}
+
+#suscribete > div{
+  box-shadow:0 20px 50px rgba(20,45,90,0.18);
+}
+
+/* Sobre mí */
+#sobre-mi{
+  background:#f7f9fc;
+}
+
+#sobre-mi h2{
+  color:#14284b;
+}
+
+#sobre-mi p{
+  color:#5c6b80 !important;
+}
+
+/* Footer */
+footer{
+  background:#07172d;
+  border-top:none;
+  color:#aebcd1;
+  padding:45px 8vw;
+}
+
+footer a{
+  color:#aebcd1 !important;
+}
+
+footer a:hover{
+  color:#ffffff !important;
+}
+
+/* ANUNCIOS */
+.ad-slot{
+  background:#f5f7fb;
+  border-color:#d8e0ec;
+  color:#7c8798;
+}
+
+/* MÓVIL */
+@media (max-width:800px){
+
+  header{
+    padding:14px 5vw;
+  }
+
+  .logo{
+    font-size:1.35rem;
+  }
+
+  .hero{
+    padding:55px 6vw 60px;
+    min-height:auto;
+  }
+
+  .hero h1{
+    font-size:2.5rem;
+    max-width:15ch;
+  }
+
+  section{
+    padding:55px 6vw;
+  }
+
+  .card{
+    min-height:230px;
+  }
+
+  #menu{
+    background:#ffffff;
+  }
+
+  nav ul li a{
+    color:#162238 !important;
+  }
+     }  
 </style>
 </head>
 <body>
