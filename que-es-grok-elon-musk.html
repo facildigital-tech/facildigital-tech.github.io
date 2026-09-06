@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="¿Qué es Grok, la inteligencia artificial de Elon Musk? Te explicamos qué es, quién la creó, para qué sirve, si es gratis y en qué se diferencia de ChatGPT.">
+  <title>¿Qué es Grok, la inteligencia artificial de Elon Musk y para qué sirve?</title>
+
+  <style>
+    :root{
+      --primary:#0b57d0;
+      --primary-dark:#063b91;
+      --accent:#22c55e;
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#202124;
+      --muted:#5f6368;
+      --border:#e3e7ee;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#07182f;
+      color:#eaf1ff;
+      line-height:1.75;
+    }
+
+    header{
+      background:linear-gradient(135deg,#071b3d,#0b57d0,#14b8a6);
+      color:#fff;
+      padding:55px 20px 65px;
+      text-align:center;
+    }
+
+    header .brand{
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      opacity:.9;
+      margin-bottom:14px;
+    }
+
+    header h1{
+      max-width:1000px;
+      margin:0 auto;
+      font-size:clamp(28px,5vw,48px);
+      line-height:1.15;
+    }
+
+    header p{
+      max-width:760px;
+      margin:20px auto 0;
+      font-size:18px;
+      opacity:.95;
+    }
+
+    .back-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:26px;
+      padding:10px 20px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.15);
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:600;
+      border:1px solid rgba(255,255,255,0.35);
+      transition:background .2s;
+    }
+
+    .back-btn:hover{
+      background:rgba(255,255,255,0.28);
+    }
+
+    main{
+      max-width:900px;
+      margin:-35px auto 50px;
+      padding:0 18px;
+    }
+
+    article{
+      background:#0c213f;
+      border:1px solid #224a78;
+      border-radius:22px;
+      padding:clamp(22px,5vw,55px);
+      box-shadow:0 10px 35px rgba(0,0,0,.35);
+    }
+
+    .intro{
+      font-size:18px;
+      color:#dbeafe;
+    }
+
+    .notice{
+      background:#102b52;
+      color:#e6f0ff;
+      border-left:5px solid #38bdf8;
+      padding:18px 20px;
+      border-radius:12px;
+      margin:25px 0;
+    }
+
+    h2{
+      margin-top:45px;
+      font-size:30px;
+      line-height:1.3;
+      color:#ffffff;
+    }
+
+    h3{
+      margin-top:38px;
+      font-size:24px;
+      line-height:1.35;
+      color:#60a5fa;
+    }
+
+    .number{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#0b57d0,#14b8a6);
+      color:#fff;
+      font-weight:800;
+      margin-right:8px;
+      font-size:18px;
+    }
+
+    ol,ul{
+      padding-left:25px;
+    }
+
+    li{
+      margin-bottom:12px;
+    }
+
+    .feature{
+      margin:28px 0;
+      padding:25px;
+      border:1px solid #285581;
+      border-radius:18px;
+      background:#102b50;
+    }
+
+    .feature:hover{
+      box-shadow:0 8px 25px rgba(56,189,248,.16);
+    }
+
+    .play-button{
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      margin-top:18px;
+      min-width:250px;
+      padding:13px 20px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0b57d0,#124a93);
+      border:1px solid #2e7eea;
+      color:#ffffff !important;
+      text-decoration:none;
+      box-shadow:0 7px 20px rgba(0,0,0,.28);
+      transition:transform .2s, box-shadow .2s, background .2s;
+    }
+
+    .play-button:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg,#1268ed,#1559ae);
+      box-shadow:0 10px 26px rgba(0,0,0,.34);
+    }
+
+    .play-logo{
+      width:42px;
+      height:42px;
+      flex:0 0 42px;
+      background:#ffffff;
+      border-radius:10px;
+      padding:7px;
+      box-shadow:0 2px 8px rgba(0,0,0,.18);
+    }
+
+    .play-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.25;
+      text-align:left;
+    }
+
+    .play-text small{
+      color:#d9e9ff;
+      font-size:12px;
+      margin-bottom:3px;
+    }
+
+    .play-text strong{
+      color:#ffffff;
+      font-size:16px;
+    }
+
+    .web-button{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:14px;
+      margin-left:0;
+      padding:13px 22px;
+      border-radius:14px;
+      background:#0c213f;
+      border:1px solid #38bdf8;
+      color:#7dd3fc !important;
+      text-decoration:none;
+      font-weight:700;
+      font-size:15px;
+      transition:background .2s;
+    }
+
+    .web-button:hover{
+      background:#102b52;
+    }
+
+    .small-note{
+      color:#9fb3cc;
+      font-size:14px;
+      margin-top:10px;
+    }
+
+    .faq{
+      background:#102b52;
+      border:1px solid #1d416e;
+      border-radius:16px;
+      padding:22px;
+      margin:22px 0;
+    }
+
+    .tip{
+      margin-top:35px;
+      padding:24px;
+      border-radius:18px;
+      background:linear-gradient(135deg,#0d3a5c,#0b57d0);
+      border:1px solid #2563eb;
+      color:#ffffff;
+    }
+
+    .bottom-nav{
+      display:flex;
+      justify-content:center;
+      margin-top:45px;
+    }
+
+    .home-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 30px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0b57d0,#14b8a6);
+      color:#ffffff;
+      text-decoration:none;
+      font-weight:700;
+      font-size:15px;
+      box-shadow:0 8px 22px rgba(0,0,0,.3);
+      transition:transform .2s;
+    }
+
+    .home-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    footer{
+      text-align:center;
+      color:#9fb3cc;
+      padding:25px 15px 40px;
+      font-size:14px;
+    }
+
+    article p, article li{
+      color:#d8e5f7;
+    }
+
+    @media(max-width:600px){
+      header{padding:42px 18px 55px}
+      main{padding:0 10px}
+      article{border-radius:18px}
+      h2{font-size:26px}
+      h3{font-size:21px}
+      .play-button{width:100%;min-width:0;justify-content:flex-start}
+      .play-text strong{font-size:15px}
+      .web-button{width:100%;justify-content:center}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">Fácil Digital</div>
+  <h1>¿Qué es Grok, la inteligencia artificial de Elon Musk y para qué sirve?</h1>
+  <p>Te explicamos en palabras simples quién creó Grok, cómo funciona, si es gratis y qué lo hace diferente de ChatGPT o Gemini.</p>
+  <a href="index.html" class="back-btn">🏠 Volver al inicio</a>
+</header>
+
+<main>
+<article>
+
+<p class="intro">Seguramente has visto el nombre "Grok" apareciendo en X (la red social antes conocida como Twitter) respondiendo dudas, opinando sobre publicaciones o generando imágenes. Si te has preguntado qué es exactamente, quién lo creó y si vale la pena probarlo, en este artículo te lo explicamos de forma sencilla, sin tecnicismos.</p>
+
+<div class="notice">
+  <strong>💡 Resumen rápido:</strong> Grok es un asistente de inteligencia artificial creado por xAI, la empresa de Elon Musk. Funciona parecido a ChatGPT, pero con una diferencia clave: tiene acceso en tiempo real a lo que se publica en X.
+</div>
+
+<h2>¿Quién creó Grok y desde cuándo existe?</h2>
+
+<p>Grok fue desarrollado por <strong>xAI</strong>, la compañía de inteligencia artificial que Elon Musk fundó en 2023. La idea detrás del proyecto era construir un asistente de IA distinto a los que ya existían: uno con acceso directo a la conversación pública que ocurre en X, y con un tono más directo y menos formal que otros chatbots.</p>
+
+<p>El nombre "Grok" no es casualidad: viene de la novela de ciencia ficción "Stranger in a Strange Land", de Robert Heinlein, donde la palabra significa entender algo tan a fondo que casi te vuelves parte de ello.</p>
+
+<h2>¿Para qué sirve Grok? Sus funciones principales</h2>
+
+<section class="feature">
+<h3><span class="number">1</span> Responder preguntas con información actualizada</h3>
+<p>A diferencia de otros chatbots que solo conocen información hasta cierta fecha de entrenamiento, Grok puede consultar publicaciones recientes de X y la web abierta para darte respuestas sobre cosas que están pasando en este momento.</p>
+</section>
+
+<section class="feature">
+<h3><span class="number">2</span> DeepSearch: investigación más profunda</h3>
+<p>Esta función le permite a Grok revisar varias fuentes al mismo tiempo antes de darte una respuesta, en lugar de contestar con lo primero que "recuerda". Es útil cuando necesitas un resumen más completo sobre un tema, no solo una respuesta rápida.</p>
+</section>
+
+<section class="feature">
+<h3><span class="number">3</span> Generación de imágenes</h3>
+<p>Grok puede crear imágenes a partir de una descripción de texto, algo parecido a lo que hacen otras herramientas de IA. Ten en cuenta que, como cualquier generador de imágenes, conviene usarlo con responsabilidad y revisar los resultados antes de compartirlos.</p>
+</section>
+
+<section class="feature">
+<h3><span class="number">4</span> Modo de razonamiento ("Think")</h3>
+<p>Para preguntas más complicadas, de matemáticas, programación o lógica, Grok cuenta con un modo pensado para analizar el problema paso a paso antes de responder, en lugar de contestar de forma inmediata.</p>
+</section>
+
+<a class="play-button" href="https://play.google.com/store/apps/details?id=ai.x.grok" target="_blank" rel="noopener"><svg class="play-logo" viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<path d="M70 40 L300 256 L70 472 Z" fill="#34A853"/>
+<path d="M70 40 L315 181 L255 241 Z" fill="#4285F4"/>
+<path d="M70 472 L315 331 L255 271 Z" fill="#FBBC04"/>
+<path d="M315 181 L455 256 L315 331 L255 271 L255 241 Z" fill="#EA4335"/>
+</svg><span class="play-text"><small>Google Play</small><strong>Descargar Grok</strong></span></a>
+
+<br>
+
+<a class="web-button" href="https://grok.com" target="_blank" rel="noopener">🌐 Usar Grok desde el navegador (grok.com)</a>
+
+<p class="small-note">También puedes usar Grok directamente dentro de la app de X si ya la tienes instalada, sin necesidad de descargar nada más.</p>
+
+<h2>¿Grok es gratis o hay que pagar?</h2>
+
+<p>Grok tiene una versión gratuita con funciones básicas, disponible tanto en la app independiente como dentro de X. Si quieres acceso a funciones más avanzadas, como más consultas al día o herramientas ampliadas de investigación e imágenes, existe una versión de pago dentro de la suscripción de X.</p>
+
+<p>Como los precios y los límites de uso cambian con el tiempo, lo mejor es revisar los planes disponibles directamente dentro de la app antes de suscribirte a algo.</p>
+
+<h2>Grok frente a ChatGPT y otras IA: ¿en qué se diferencia?</h2>
+
+<p>Todos estos asistentes (Grok, ChatGPT, Gemini, DeepSeek) cumplen una función parecida: conversar contigo, responder preguntas y ayudarte con tareas. Lo que distingue a Grok es principalmente su conexión directa con X, que le da una ventaja cuando se trata de temas de actualidad o conversaciones que están pasando justo ahora.</p>
+
+<p>Otra diferencia que notarás es el tono: Grok tiende a responder de forma más informal y directa, con menos rodeos que otros asistentes. Esto puede gustarte o no, dependiendo de para qué lo uses.</p>
+
+<div class="faq">
+<h3>¿Necesito tener cuenta en X para usar Grok?</h3>
+<p>Puedes usarlo desde su app independiente o desde grok.com sin depender por completo de X, aunque algunas funciones pueden pedirte iniciar sesión con una cuenta.</p>
+</div>
+
+<div class="faq">
+<h3>¿Grok puede equivocarse?</h3>
+<p>Sí. Como cualquier inteligencia artificial, puede cometer errores o dar información imprecisa, sobre todo en temas delicados o muy recientes. Siempre es buena idea confirmar datos importantes en una fuente oficial.</p>
+</div>
+
+<div class="faq">
+<h3>¿Es seguro usar Grok?</h3>
+<p>Como con cualquier app de IA, es recomendable revisar qué información personal compartes y leer los permisos que solicita antes de instalarla, especialmente si vas a conectar tu cuenta de X.</p>
+</div>
+
+<div class="tip">
+<h3>💡 Consejo extra de Fácil Digital</h3>
+<p>Si ya usas otras inteligencias artificiales como ChatGPT o Gemini, prueba Grok para temas de actualidad o tendencias en redes sociales, y compara tú mismo cuál te da mejores resultados según lo que necesites.</p>
+</div>
+
+</article>
+
+<div class="bottom-nav">
+  <a href="index.html" class="home-btn">🏠 Volver al inicio</a>
+</div>
+
+</main>
+
+<footer>
+  © 2026 Fácil Digital · Tecnología fácil de entender
+</footer>
+
+</body>
+</html>
