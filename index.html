@@ -251,7 +251,10 @@
     .hero{grid-template-columns:1fr;}
     .grid{grid-template-columns:1fr;}
     .split{grid-template-columns:1fr;}
-    nav ul{gap:16px; font-size:0.82rem;}
+    nav{position:fixed; top:65px; right:-100%; width:260px; height:100vh; background:#fff; z-index:9999; transition:right 0.3s;}
+nav ul{flex-direction:column; padding:20px 0;}
+nav.active{right:0;}
+       
   }
 </style>
 </head>
@@ -259,15 +262,20 @@
 
 <header>
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
-     <div class="logo">Fácil <span>Digital</span></div>
-  <nav>id="menu">
+  <div class="logo">Fácil <span>Digital</span></div>
+  <nav id="menu">
     <ul>
-      <li><a href="#tutoriales">Tutoriales</a></li>
-      <li><a href="#ia">IA</a></li>
-      <li><a href="#android">Android</a></li>
+      <li><a href="#inicio">🏠  Inicio</a></li>
+      <li><a href="#tutoriales">📚  Tutoriales</a></li>
+      <li><a href="#ia">🤖  Inteligencia Artificial</a></li>
+      <li><a href="#android">📱  Android</a></li>
+      <li><a href="#ganar-dinero">💰  Ganar dinero con IA</a></li>
+      <li><a href="#sobre-mi">👤  Sobre mí</a></li>
+      <li><a href="#contacto">✉️  Contacto</a></li>
     </ul>
   </nav>
 </header>
+     
 
 <div class="hero">
   <div>
@@ -573,6 +581,10 @@
     });
     document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
   }
-</script>
-</body>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('active');
+}
+   </script>
+     </body>
 </html>
