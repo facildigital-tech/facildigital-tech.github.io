@@ -251,9 +251,43 @@
     .hero{grid-template-columns:1fr;}
     .grid{grid-template-columns:1fr;}
     .split{grid-template-columns:1fr;}
-    nav{position:fixed; top:65px; right:-100%; width:260px; height:100vh; background:#fff; z-index:9999; transition:right 0.3s;}
-nav ul{flex-direction:column; padding:20px 0;}
-nav.active{right:0;}
+      nav {
+    position: fixed;
+    top: 0; 
+    right: -100%; 
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 99999;
+    padding-top: 40px;
+  }
+
+  nav ul {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 20px !important;
+    gap: 20px !important;
+  }
+
+  nav ul li {
+    width: 100%;
+    list-style: none;
+  }
+
+  nav ul li a {
+    display: block;
+    color: #333 !important;
+    font-size: 18px !important;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+
+  nav.active {
+    right: 0;
+  }
+       
        
   }
 </style>
