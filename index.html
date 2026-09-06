@@ -36,7 +36,16 @@
     border-bottom:1px solid var(--line);
   }
   .logo{font-family:'Sora', sans-serif; font-size:1.4rem; font-weight:700;}
-  .logo span{color:var(--blue);}
+ .menu-btn{
+  background:transparent;
+  border:none;
+  color:#FFFFFF;
+  font-size:1.6rem;
+  cursor:pointer;
+  margin-right:12px;
+  padding:5px;
+ }
+     .logo span{color:var(--blue);}
   nav ul{display:flex; list-style:none; gap:30px; font-size:0.93rem; font-weight:500;}
   nav a:hover{color:var(--blue);}
 
@@ -249,8 +258,9 @@
 <body>
 
 <header>
-  <div class="logo">Fácil <span>Digital</span></div>
-  <nav>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+     <div class="logo">Fácil <span>Digital</span></div>
+  <nav>id="menu">
     <ul>
       <li><a href="#tutoriales">Tutoriales</a></li>
       <li><a href="#ia">IA</a></li>
