@@ -60,6 +60,9 @@
  .menu-btn{
   font-size:1.3rem;
  }
+ #menu > button{
+  display:none;
+ }
      .logo span{color:var(--blue);}
   nav ul{display:flex; list-style:none; gap:6px; font-size:0.93rem; font-weight:500; align-items:center; flex-wrap:wrap;}
   nav ul li a{
@@ -353,6 +356,12 @@
 #menu.active {
   right: 0;
      }
+
+  #menu > button{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+  }
   nav ul {
     flex-direction: column !important;
     align-items: flex-start !important;
